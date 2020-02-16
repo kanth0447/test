@@ -1,0 +1,7 @@
+to create a new custom key - aws kms create-key
+aws kms create-alias --alias-name "alias/kms-demo" --target-key-id "<key-id which generated from above command>"
+aws kms encrypt --key-id "alias/kms-demo" --plaintext fileb://test_file.txt --output text
+aws kms encrypt --key-id "alias/kms-demo" --plaintext fileb://test_file.txt --output text --query CiphertextBlob | base64 --decode > encrypted_test_file
+aws s3 cp confidential_data.txt s3://kms-key-rotation-test-bkt-01 --sse aws:kms --sse-kms-key-id "6fa6043b-2fd4-433b-83a5-3f4193d7d1a6"
+
+
