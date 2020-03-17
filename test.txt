@@ -1,0 +1,13 @@
+login to azure
+create service on leftside
+choose containers
+containers registry
+name mvp subcription location enable admin user
+docker build -t sreekanth.azurecr.io/splicecontainer:latest .
+docker login sreekanth.azurecr.io
+username: sreekanth
+password: goto resource and access keys in sreekanth container registry
+docker push sreekanth.azurecr.io/splicecontainer:latest
+goto repositories in container registry u will have splice container image with latest version
+create service on leftside
+goto web and webapp for containers
